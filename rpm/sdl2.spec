@@ -40,7 +40,11 @@ to develop SDL applications.
 %autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
-%configure CFLAGS='-std=c99' --disable-video-x11 --enable-video-wayland --enable-pulseaudio
+%configure CFLAGS='-std=c99' \
+    --disable-oss \
+    --disable-video-x11 \
+    --enable-pulseaudio \
+    --enable-video-wayland
 %make_build
 
 %install
